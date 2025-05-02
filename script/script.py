@@ -1,76 +1,58 @@
 from flask import Flask, render_template, request
-import os
 
-app = Flask(__name__, template_folder="../public", static_folder="../assets")
+app = Flask(__name__,
+            template_folder="../public",
+            static_folder="../assets")
 
+# Main routes
 @app.route('/')
-def index():
+def home():
+    return render_template('index.html')
+
+@app.route('/script')
+def calculator():
     return render_template('script.html')
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
     try:
-        revenu = int(request.form['revenu'])
-        logement = int(request.form['logement'])
-        nourriture = int(request.form['nourriture'])
-        transport = int(request.form['transport'])
-        epargne = int(request.form['epargne'])
+        budget = float(request.form['revenu'])
+        logement = float(request.form['logement'])
+        nourriture = float(request.form['nourriture'])
+        transport = float(request.form['transport'])
+        epargne = float(request.form['epargne'])
 
         total_depenses = logement + nourriture + transport + epargne
-        solde = revenu - total_depenses
+        solde = budget - total_depenses
 
         if solde > 100:
-            message = "👏 Yatta ! Tu gères ton argent comme un pro ! all green!（＾∀＾●）ﾉｼ"
-            status = "green"
+            reaction = "👏 Yatta ! Tu gères ton argent comme un pro !"
+            etat = "good"
         elif solde < 0:
-            message = "⚠️ Oof… tu es dans le rouge ! ！yabai! aka desu !!"
-            status = "red"
+            reaction = "⚠️ Oof… tu es dans le rouge !"
+            etat = "danger"
         else:
-            message = "😅 C’est serré…だけど"
-            status = "orange"
+            reaction = "😅 C’est serré…だけど walla"
+            etat = "warning"
 
-        return f"""
-        <link rel="stylesheet" href="../assets/css/script.css">
-        <h1>Résultat</h1>
-        <p>Solde restant : <strong>{solde}€</strong></p>
-        <p class="{status}">{message}</p>
-        <a href="/">Retour</a>
-        """
+        return render_template('result.html',
+                            budget=budget,
+                            total_depenses=total_depenses,
+                            solde=solde,
+                            reaction=reaction,
+                            etat=etat)
 
     except ValueError:
-        return "<p>Erreur : Veuillez entrer des nombres valides.</p>"
+        return "Erreur : Veuillez entrer des nombres valides."
+
+# Additional pages
+@app.route('/about')
+def about():
+    return render_template('pages/about/about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('pages/contact/contact.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-    from flask import Flask, render_template, request
-
-@app.route('/result', methods=['POST'])
-def result():
-    budget = float(request.form['budget'])
-    logement = float(request.form['logement'])
-    nourriture = float(request.form['nourriture'])
-    transport = float(request.form['transport'])
-    epargne = float(request.form['epargne'])
-
-    total_depenses = logement + nourriture + transport + epargne
-    solde = budget - total_depenses
-
-    if solde > 100:
-        reaction = "👏 Yatta ! Tu gères ton argent comme un pro ! all green!（＾∀＾●）ﾉｼ"
-        etat = "good"
-    elif solde < 0:
-        reaction = "⚠️ Oof… tu es dans le rouge ! ！yabai! aka desu !!"
-        etat = "danger"
-    else:
-        reaction = "😅 C’est serré…だけど walla"
-        etat = "warning"
-
-    return render_template('result.html',
-        budget=budget,
-        total_depenses=total_depenses,
-        solde=solde,
-        reaction=reaction,
-        etat=etat
-    )
-

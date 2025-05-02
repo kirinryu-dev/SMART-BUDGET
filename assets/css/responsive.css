@@ -75,6 +75,14 @@
         margin-top: 1rem;
     }
 
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-buttons .btn {
+        max-width: none;
+    }
+
     /* FOOTER */
     footer {
         text-align: center;

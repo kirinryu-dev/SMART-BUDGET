@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Résultat du budget</title>
-    <link rel="stylesheet" href="../../assets/css/script.css">
-    <link rel="stylesheet" href="../../assets/css/result.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/script.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+
 </head>
 <body>
     <header>
-        <h1>SMART BUDJET 💸 — Résultat</h1>
+        <h1>SMART BUDGET 💸 → Resultat</h1>
         <nav>
             <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../about/about.html">About</a></li>
-                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- resultat apres calculate ==> de script  -->
         <section class="result_section">
             <h2>Résumé de votre budget</h2>
             <div class="result_content">
                 <p><strong>Budget initial :</strong> {{ budget }} €</p>
                 <p><strong>Dépenses totales :</strong> {{ total_depenses }} €</p>
                 <p><strong>Solde restant :</strong> {{ solde }} €</p>
-                <p class="verdict {{ etat }}"> {{ reaction }}</p>
+                <p class="verdict {{ etat }}">{{ reaction }}</p>
+            </div>
+            <div class="action-buttons">
+                <a href="/" class="btn">Retour à l'accueil</a>
+                <a href="/script" class="btn">Nouveau calcul</a>
             </div>
         </section>
+        
     </main>
 
     <footer>
-        <p>&copy; 2023 SMART BUDJET</p>
+        <p>&copy; 2023 SMART BUDGET</p>
     </footer>
 </body>
 </html>

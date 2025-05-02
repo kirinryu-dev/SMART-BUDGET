@@ -35,6 +35,11 @@ html {
     --budget-danger: #F44336;
 }
 
+a,
+a:visited {
+    text-decoration: none;
+}
+
 .rajdhani-light {
     font-family: "Rajdhani", sans-serif;
     font-weight: 300;
