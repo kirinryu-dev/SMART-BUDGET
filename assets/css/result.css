@@ -1,0 +1,33 @@
+.result_section {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.result_section h2 {
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.result_content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.verdict.good {
+    color: var(--good-color);
+    font-weight: bold;
+}
+
+.verdict.warning {
+    color: var(--warning-color);
+    font-weight: bold;
+}
+
+.verdict.danger {
+    color: var(--danger);
+    font-weight: bold;
+}

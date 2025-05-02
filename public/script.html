@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Budget - Simulation</title>
+  <!-- Police -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- CSS spécifique à ce formulaire -->
+  <link rel="stylesheet" href="../assets/css/script.css">
+</head>
+
+<body>
+  <header>
+    <h1>SMART BUDGET 💸</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about/about.html">About</a></li>
+        <li><a href="#" disabled>Services</a></li>
+        <li><a href="../pages/contact/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form_section">
+      <h2>Simulateur de Budget 🧮</h2>
+      <p>Remplis les champs pour savoir si tu es dans le vert, le rouge ou le juste équilibre.</p>
+
+      <form action="/calculate" method="POST" class="budget_form">
+        <label for="revenu">Revenu (€)</label>
+        <input type="number" name="revenu" id="revenu" required>
+
+        <label for="logement">Logement (€)</label>
+        <input type="number" name="logement" id="logement" required>
+
+        <label for="nourriture">Nourriture (€)</label>
+        <input type="number" name="nourriture" id="nourriture" required>
+
+        <label for="transport">Transport (€)</label>
+        <input type="number" name="transport" id="transport" required>
+
+        <label for="epargne">Mis de côté (€)</label>
+        <input type="number" name="epargne" id="epargne" required>
+
+        <button type="submit" class="budget_btn">Analyser mon budget</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Smart Budget. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* SMART BUDJET STYLE  */
+/* version : 1.0.0 */
+/* author : kirinryu.dev */
+/* date : 2023-10-01 */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General configuration  */
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* Main colors */
+    --main-bg-color: #f4f6f8;
+    --primary-color: #4CAF50;
+    --secondary-color: #2E7D32;
+    --accent-color: #FFC107;
+
+    /* Text colors */
+    --main-text-color: #212121;
+    --secondary-text-color: #757575;
+    --text-white: #ffffff;
+    --text-muted: #666;
+
+    /* Budget status colors */
+    --budget-good: #4CAF50;
+    --budget-warning: #FF9800;
+    --budget-danger: #F44336;
+}
+
+.rajdhani-light {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+ }
+  
+ .rajdhani-regular {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+ }
+  
+ .rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+ }
+  
+ .rajdhani-semibold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+  
+  .rajdhani-bold {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* End General configuration */
+
+body {
+    background-color: var(--main-bg-color) ;
+    display: flex ;
+    flex-direction: column ;
+    min-height: 100vh ;
+    width: 100% ;
+}
+
+/* Header styles */
+header {
+    background-color: var(--primary-color) ;
+    color: var(--text-white) ;
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+}
+
+header h1 {
+    font-size:  1.5rem ;
+
+}
+
+nav ul {
+    list-style: none ;
+    display: flex ;
+    gap: 1rem ;
+    padding: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none ;
+    color: var(--text-white) ;
+    padding: 1rem ;
+    border-radius: 5px ;
+    transition: background-color 0.3s ease ;
+    -webkit-transition: background-color 0.3s ease ;
+    -moz-transition: background-color 0.3s ease ;
+    -ms-transition: background-color 0.3s ease ;
+    -o-transition: background-color 0.3s ease ;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color) ;
+    color: var(--text-white) ;
+}
+nav ul li a.active {
+    background-color: var(--secondary-color) ;
+    color: var(--text-white) ;
+}
+
+
+/* end header styles  */
+
+/* main style  */
+.home {
+    padding: 2rem ;
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
+    text-align: center;
+}
+
+.home_content h2 {
+    font-size:  2rem;
+    color: var(--secondary-color);
+    margin-bottom:  1rem;
+
+}
+
+.home_content span {
+    font-size:  1rem ;
+    color: var(--secondary-text-color) ;
+    margin-bottom:  1em;
+
+}
+
+.home_content span {
+    color: var(--accent-color);
+    
+}
+
+.home_img {
+    max-width: 50% ;
+    height: auto ;
+    margin: 2rem ;
+    border-radius:  1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    -webkit-border-radius:  1rem;
+    -moz-border-radius:  1rem;
+    -ms-border-radius:  1rem;
+    -o-border-radius:  1rem;
+}
+
+.budget_btn {
+    margin-top:  2rem ;
+    padding:  2em ;
+    background-color: var(--secondary-color) ;
+    color: var(--text-white) ;
+    border: none ;
+    border-radius:  5px ;
+    font-size:  1rem ;
+    transition:  background 0.3s ease;
+    cursor: pointer;
+    -webkit-border-radius:  5px ;
+    -moz-border-radius:  5px ;
+    -ms-border-radius:  5px ;
+    -o-border-radius:  5px ;
+    -webkit-transition:  background 0.3s ease;
+    -moz-transition:  background 0.3s ease;
+    -ms-transition:  background 0.3s ease;
+    -o-transition:  background 0.3s ease;
+
+}
+
+.budget_btn:hover {
+    background-color: var(--primary-color) ;
+    color: var(--text-white) ;
+
+}
+
+
+/* end main style  */
+
+/* Footer styles */
+footer {
+    text-align: center ;
+    padding:  1em ;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    font-size:  0.5rem;
+}
+/* end footer styles   */
